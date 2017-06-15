@@ -16,5 +16,5 @@ ActiveRecord::Base.logger = Logger.new(STDOUT) if ENV['DEBUG']
 Dir[APP_ROOT.join('app', 'models', '*.rb')].each { |file| require file }
 
 # Establish database connection
-ActiveRecord::Base.establish_connection :adapter  => 'sqlite3',
-                                        :database => DB_PATH
+ActiveRecord::Base.establish_connection(:adapter  => 'sqlite3',
+                                        :database => "#{File.dirname(__FILE__)}/../db/todo-list.sqlite3")
