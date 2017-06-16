@@ -21,7 +21,7 @@ class Todo < ActiveRecord::Base
 
     def self.update(x)
     	y = x[0]
-        x = Task.find_by_id(x[0])
+        x = Task.find_by_no(x[0])
         if x == nil
         	puts "Task number '#{y}' is not found. Are you sure that this is the right task number?"
         else
@@ -43,7 +43,7 @@ class Todo < ActiveRecord::Base
 
     def self.done(x)
     	y = x[0]
-        x = Task.find_by_id(x[0])
+        x = Task.find_by_no(x[0])
         if x == nil
         	puts "Task number '#{y}' is not found. Are you sure that this is the right task number?"
         else
@@ -55,7 +55,7 @@ class Todo < ActiveRecord::Base
 
     def self.undone(x)
     	y = x[0]
-        x = Task.find_by_id(y[0])
+        x = Task.find_by_no(y[0])
         if x == nil
         	puts "Task number '#{y}' is not found. Are you sure that this is the right task number?"
         else        
